@@ -1,4 +1,5 @@
 from django.db import models
+from locations.models import Location
 
 # Create your models here.
 class PLAccount(models.Model):
@@ -17,3 +18,7 @@ class PLAccount(models.Model):
 	note			= models.TextField(blank=True, null=True)
 	accountnumber 	= models.CharField(max_length=250,blank=True, null=True)
 	pltype 			= models.CharField(max_length=3,choices=PLTYPE_CHOICES,default=EXPENSE,)
+	location 		= models.ForeignKey('locations.Location', on_delete=models.CASCADE, default=1)
+
+	def __str__(self):
+		return self.location.name + " - " + self.category + ", " + self.date.strftime("%b %Y")
