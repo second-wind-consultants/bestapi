@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from . import models
 
-class PLAccountSerializer(serializers.ModelSerializer):
+class LocationSerializer(serializers.ModelSerializer):
 	class Meta:
-		model = models.PLAccount
+		model = models.Location
 		fields = '__all__'
