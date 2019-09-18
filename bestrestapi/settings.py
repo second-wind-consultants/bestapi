@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'proforma',
     'locations',
     'rest_framework',
+    "frontend",
 ]
 
 MIDDLEWARE = [

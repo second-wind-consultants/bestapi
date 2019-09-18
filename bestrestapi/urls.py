@@ -21,5 +21,6 @@ from .views import redirect_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(router.urls)),
-    path('', redirect_view),
+    path('', include('frontend.urls')),
+    #path('', redirect_view),
 ]
